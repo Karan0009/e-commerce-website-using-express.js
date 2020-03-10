@@ -3,6 +3,8 @@ E-commerce website made using express.js, mongoose and ejs templating engine.(pa
 
 **note: Some packages(sequelize,pug,handlebars,etc) are not used but will get installed.You can manullay uninstall those packages.**
 
+**note: Update dependencies by running command "npm update".**
+
 steps to start the app-
 1. Run npm install command to install modules
 2. create .env file in the root directory and in that file write following
