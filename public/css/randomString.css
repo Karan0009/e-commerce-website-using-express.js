@@ -1,0 +1,38 @@
+body {
+  font-family: Arial;
+  background: #dddddd;
+  text-align: center;
+}
+#para {
+  margin: auto;
+  color: #aaaaaa;
+  border: 1px solid #bbbbbb;
+  background: #cccccc;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#enterTxt {
+  border: none;
+  color: #767676;
+  font-size: 30px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+#btn {
+  cursor: pointer;
+  margin-bottom: 20px;
+  border: none;
+  color: #767676;
+  border-radius: 5px;
+  padding: 5px;
+}
+#btn:active {
+  cursor: pointer;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  color: #767676;
+  border-radius: 5px;
+  padding: 5px;
+}

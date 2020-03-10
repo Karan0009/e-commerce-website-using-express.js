@@ -1,0 +1,40 @@
+<!-- this page is used for login -->
+
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/add-product.css" />
+<link rel="stylesheet" href="/css/auth.css" />
+  </head>
+  <body>
+    <%- include('../includes/nav.ejs') %>
+    <main>
+      <% if(message) { %>
+        <div class="alert-message alert-message-error"><%= message %></div>
+      <% } %>
+      <form class="login-form" method="POST" action="/login" novalidate>
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="enter email"
+            value="<%= oldInput %>" />
+        </div>
+        <div class="form-control">
+          <label for="password">password</label>
+          <input
+            type="password" 
+            name="password" 
+            id="password" 
+            placeholder="**************" />
+        </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button class="login-btn" type="submit">
+          Login
+        </button>
+      </form>
+      <div class="centered">
+        <a href="/reset" >Forget password</a>
+      </div>
+    </main>
+<%- include('../includes/end.ejs') %>
