@@ -4,14 +4,14 @@ const bcrypt = require("bcryptjs");
 const nodemailer = require("nodemailer");
 const sendgridTransport = require("nodemailer-sendgrid-transport");
 const { validationResult } = require("express-validator/check");
+require("dotenv").config();
 
 const User = require("../models/user");
 
 const transporter = nodemailer.createTransport(
   sendgridTransport({
     auth: {
-      api_key:
-        "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"
+      api_key: process.env.SENDGRID_API_KEY
     }
   })
 );
@@ -168,7 +168,7 @@ exports.postSignupPage = (req, res, next) => {
       console.log("new user created");
       res.redirect("/login");
       const emailOptions = {
-        from: "contact@feelin.com",
+        from: process.env.SENDGRID_EMAIL,
         to: email,
         subject: "Welcome user",
         text:
@@ -222,7 +222,7 @@ exports.postResetPage = (req, res, next) => {
       })
       .then(result => {
         const emailOptions = {
-          from: "contact@feelin.com",
+          from: process.env.SENDGRID_EMAIL,
           to: email,
           subject: "password reset",
           html: `
